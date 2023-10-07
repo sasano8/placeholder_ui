@@ -1,0 +1,109 @@
+{
+    "title": "your teck stack",
+    "components": [
+        {
+            "type": "model_store",
+            "name": "mlflow"
+        },
+        {
+            "type": "workflow_engine",
+            "name": "kedro"
+        },
+        {
+            "type": "project_template",
+            "name": "kedro"
+        },
+        {
+            "type": "object_storage",
+            "name": "s3"
+        },
+        {
+            "type": "object_storage",
+            "name": "minio"
+        },
+        {
+            "type": "stream",
+            "name": "kafka"
+        },
+        {
+            "type": "workflow_engine",
+            "name": "airflow"
+        },
+        {
+            "type": "workflow_engine",
+            "name": "perfect"
+        },
+        {
+            "type": "feature_store",
+            "name": "Feast"
+        },
+        {
+            "type": "data_catalog",
+            "name": "atlas"
+        },
+        {
+            "type": "data_catalog",
+            "name": "kedro"
+        },
+        {
+            "type": "filesystem",
+            "name": "filesystem"
+        },
+        {
+            "type": "filesystem",
+            "name": "Hadoop"
+        },
+        {
+            "type": "filesystem",
+            "name": "Spark"
+        },
+        {
+            "type": "filesystem",
+            "name": "Ceph"
+        },
+        {
+            "type": "database",
+            "name": "sqlite"
+        },
+        {
+            "type": "database",
+            "name": "postgresql"
+        }
+    ],
+    "space": {
+        "infra": [
+            {
+                "type": "filesystem"
+            },
+            {
+                "type": "network_file_storage"
+            },
+            {
+                "type": "database"
+            },
+            {
+                "type": "object_storage"
+            },
+            {
+                "type": "stream"
+            }
+        ],
+        "app": [
+            {
+                "type": "model_store"
+            },
+            {
+                "type": "feature_store"
+            },
+            {
+                "type": "data_catalog"
+            },
+            {
+                "type": "workflow_engine"
+            },
+            {
+                "type": "project_template"
+            }
+        ]
+    }
+}

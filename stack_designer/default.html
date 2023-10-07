@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Holder Web App</title>
+    <style>
+        .space {
+            margin: 20px 0;
+            border: 1px solid black;
+            padding: 20px;
+        }
+
+        .component {
+            border: 1px solid grey;
+            padding: 10px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h2 id="title"></h2>
+
+<div id="infra" class="space">
+    <h3>Infrastructure</h3>
+</div>
+
+<div id="app" class="space">
+    <h3>Application</h3>
+</div>
+
+<script>
+    const data = $placeholer
+
+    document.getElementById('title').innerText = data.title;
+
+    function updatePlaceholderText(dropdown, type) {
+        const selectedName = dropdown.options[dropdown.selectedIndex].text;
+        // dropdown.previousSibling.textContent = `${type}: ${selectedName}`;
+    }
+
+    function createPlaceHolder(element, type) {
+        const componentDiv = document.createElement('div');
+        componentDiv.className = 'component';
+
+        const label = document.createElement('span');
+        label.innerText = type;
+
+        componentDiv.appendChild(label);
+
+        const matchingComponents = data.components.filter(comp => comp.type === type);
+        
+        if (matchingComponents.length > 0) {
+            const dropdown = document.createElement('select');
+            matchingComponents.forEach(comp => {
+                const option = document.createElement('option');
+                option.value = comp.name;
+                option.innerText = comp.name;
+                dropdown.appendChild(option);
+            });
+
+            dropdown.onchange = () => updatePlaceholderText(dropdown, type);
+            componentDiv.appendChild(dropdown);
+        }
+        
+        element.appendChild(componentDiv);
+    }
+
+    const infraSpace = document.getElementById('infra');
+    data.space.infra.forEach(item => {
+        createPlaceHolder(infraSpace, item.type);
+    });
+
+    const appSpace = document.getElementById('app');
+    data.space.app.forEach(item => {
+        createPlaceHolder(appSpace, item.type);
+    });
+</script>
+
+</body>
+</html>
