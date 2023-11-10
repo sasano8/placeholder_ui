@@ -68,6 +68,30 @@
         {
             "type": "database",
             "name": "postgresql"
+        },
+        {
+            "type": "annotation_tool",
+            "name": "Labellmg"
+        },
+        {
+            "type": "annotation_tool",
+            "name": "cvat"
+        },
+        {
+            "type": "annotation_tool",
+            "name": "labelme"
+        },
+        {
+            "type": "annotation_format",
+            "name": "PASCAL VOC形式"
+        },
+        {
+            "type": "annotation_format",
+            "name": "YOLO形式"
+        },
+        {
+            "type": "annotation_format",
+            "name": "CreateML形式"
         }
     ],
     "space": {
@@ -103,6 +127,12 @@
             },
             {
                 "type": "project_template"
+            },
+            {
+                "type": "annotation_tool"
+            },
+            {
+                "type": "annotation_format"
             }
         ]
     }

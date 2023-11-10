@@ -21,5 +21,5 @@ stack_designer build -c samples/mlops.json -t templates/default.html -o public
 ## serve
 
 ```
-stack_designer serve -c samples/mlops.json -p 8000
+python -m stack_designer serve -c samples/mlops.json -p 8000
 ```
